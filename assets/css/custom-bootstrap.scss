@@ -28,4 +28,11 @@ $new-border-widths: (
 
 $border-widths: map-merge($border-widths, $new-border-widths);
 
+// MODIFIES BUTTONS START PADDING
+$new-input-btn-padding-y: 0.75rem;
+$new-input-btn-padding-x: 2.5rem;
+
+$btn-padding-y: $new-input-btn-padding-y;
+$btn-padding-x: $new-input-btn-padding-x;
+
 @import "./scss/bootstrap.scss";
