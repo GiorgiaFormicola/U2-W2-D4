@@ -1,5 +1,34 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "./scss/functions";
+
+// 2. Include any default variable overrides here
+// MODIFIES BUTTONS START PADDING
+
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+
+// MODIFIES DEFAULT GUTTER WIDTH
+
+$grid-gutter-width: 0.5rem;
+
+// MODIFIES DEFAULT CARDS STYLE
+
+$card-border-radius: 2rem;
+
+// MODIFIES THEME-COLORS
+
+$danger: #ff0077;
+$info: #00ffea;
+$light: #f3eeff;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "./scss/variables";
+@import "./scss/variables-dark";
+
+// 4. Include any default map overrides here
 
 // ADD CUSTOM FONT-SIZES
 $h7-font-size: $font-size-base * 0.875;
@@ -28,19 +57,62 @@ $new-border-widths: (
 
 $border-widths: map-merge($border-widths, $new-border-widths);
 
-// MODIFIES BUTTONS START PADDING
-
-$btn-padding-y: 0.75rem;
-$btn-padding-x: 2.5rem;
-
-// MOFIDIES DEFAULT GUTTER WIDTH
-
-$grid-gutter-width: 0.5rem;
-
 // MODIFIES DEFAULT CARDS STYLE
-
 $card-bg: $dark;
 $card-color: $info;
-$card-border-radius: 2rem;
 
+//MODIFIES BUTTONS, INPUTS AND BADGES BORDER RADIUS
+$btn-border-radius: $border-radius-pill;
+$btn-border-radius-sm: $border-radius-pill;
+$btn-border-radius-lg: $border-radius-pill;
+
+$input-border-radius: $border-radius-pill;
+$input-border-radius-sm: $border-radius-pill;
+$input-border-radius-lg: $border-radius-pill;
+
+$badge-border-radius: $border-radius-pill;
+
+//ADDS CUSTOM COLORS TO THEME MAP
+$epicode-1: #5726c3;
+$epicode-2: #8625a5;
+$epicode-3: #cb2376;
+
+$custom-theme-colors: (
+  "epicode-1": $epicode-1,
+  "epicode-2": $epicode-2,
+  "epicode-3": $epicode-3,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+//ADD CUSTOM BREAKPOINTS TO GRID BREAKPOINTS MAP
+
+$custom-grid-breakpoints: (
+  3xl: 1600px,
+  4xl: 1800px,
+);
+
+$grid-breakpoints: map-merge($grid-breakpoints, $custom-grid-breakpoints);
+
+//ADD CUSTOM MAX WIDTHS TO CONTAINER MAX WIDTHS MAP
+$custom-container-max-widths: (
+  3xl: 1520px,
+  4xl: 1720px,
+);
+
+$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
+
+// 5. Include remainder of required parts
+@import "./scss/maps";
+@import "./scss/mixins";
+@import "./scss/root";
+@import "./scss/utilities";
+
+// 6. Include any other optional stylesheet partials as desired; list below is not inclusive of all available stylesheets
 @import "./scss/bootstrap.scss";
+// ...
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "./scss/utilities/api";
+
+// 8. Add additional custom code here
