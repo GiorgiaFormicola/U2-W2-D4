@@ -37,4 +37,9 @@ $btn-padding-x: 2.5rem;
 
 $grid-gutter-width: 0.5rem;
 
+// MODIFIES DEFAULT CARDS STYLE
+
+$card-bg: $dark;
+$card-color: $info;
+
 @import "./scss/bootstrap.scss";
