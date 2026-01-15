@@ -29,10 +29,12 @@ $new-border-widths: (
 $border-widths: map-merge($border-widths, $new-border-widths);
 
 // MODIFIES BUTTONS START PADDING
-$new-input-btn-padding-y: 0.75rem;
-$new-input-btn-padding-x: 2.5rem;
 
-$btn-padding-y: $new-input-btn-padding-y;
-$btn-padding-x: $new-input-btn-padding-x;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+
+// MOFIDIES DEFAULT GUTTER WIDTH
+
+$grid-gutter-width: 0.5rem;
 
 @import "./scss/bootstrap.scss";
