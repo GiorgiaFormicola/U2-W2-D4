@@ -1,6 +1,7 @@
 @import "./scss/functions";
 @import "./scss/variables";
 
+// ADD CUSTOM FONT-SIZES
 $h7-font-size: $font-size-base * 0.875;
 $h8-font-size: $font-size-base * 0.75;
 $h9-font-size: $font-size-base * 0.625;
@@ -14,5 +15,17 @@ $new-font-sizes: (
 );
 
 $font-sizes: map-merge($font-sizes, $new-font-sizes);
+
+// ADD CUSTOM BORDER-WIDTHS
+
+$new-border-widths: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+
+$border-widths: map-merge($border-widths, $new-border-widths);
 
 @import "./scss/bootstrap.scss";
